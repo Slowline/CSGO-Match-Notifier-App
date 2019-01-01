@@ -1,0 +1,20 @@
+<!-- Background Color For the Page-->
+<StackLayout class="page-bg-color">
+    
+    <!-- Setup Stacklayout -->
+    <StackLayout #setup height="100%" visibility="{{ needSetup ? 'visible' : 'collapsed' }}" horizontalAlignment="center">
+        <Image src="res://csgomatchnotifierlogo" marginTop="100" width="300"></Image>
+        
+        <TextField #ipAddressTextField style="placeholder-color: #d1d1d1;" marginTop="100" hint="IP Address" textAlignment="center" width="300" color="white" maxLength="20"></TextField>
+        <Button text="Start" (tap)="startListening()" backgroundColor="blue" width="300"></Button>
+    </StackLayout>
+
+    <!-- Listening Stack Layout -->
+    <StackLayout #listening height="100%" padding="10 10 10 10" visibility="{{ needSetup ? 'collapsed' : 'visible' }}">
+        <Label visibility="{{ matchFound ? 'collapsed' : 'visible' }}" text="We're waiting for a Match!"></Label>
+        <Label visibility="{{ isReconnecting ? 'visible' : 'collapsed' }}" text="Connection to Socket has been lost. Trying to Reconnect."></Label>
+
+        <Button visibility="{{ matchFound ? 'visible' : 'collapsed' }}" marginTop="35%" backgroundColor="green" text="Match Found!" height="100" isEnabled = "false"></Button>
+    </StackLayout>
+
+</StackLayout>
