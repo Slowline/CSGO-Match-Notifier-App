@@ -1,5 +1,5 @@
 # CSGO-Match-Notifier-App
-*very barebone, might have somebugs or not implemented Features.*
+*very barebone, might have some bugs or not implemented Features.*
 
 Relies on a WebSocket connection in the local Network, it connects via IP.
 
